@@ -8,23 +8,6 @@ os="`uname -s`"
 chainId=55555555
 pentacle='pentacle-quorum'
 
-echo "\033[43;31mInstall go-quorum\033[0m"
-git clone https://github.com/ConsenSys/quorum.git
-echo "\033[43;31mPetacle using go-quorum v23.4.0\033[0m"
-cd quorum && git checkout tags/v23.4.0
-echo "\033[43;31mBuild go-quorum...\033[0m"
-path=${pwd}
-make all 
-echo "\033[43;31mSet go-quorum path...\033[0m"
-if [[ "$os" = "Drawin"* ]]; then
-    echo export PATH="$PATH:${path}/build/bin" >> ~/.zshrc
-    echo "\033[43;31mReload config...\033[0m"
-    source ~/.zshrc
-elif [[ "$os" = "Linux"* ]]; then
-    echo export PATH="$PATH:${path}/build/bin" >> ~/.bashrc
-    echo "\033[43;31mReload config...\033[0m"
-    source ~/.bashrc
-
 echo "\033[43;31mGenerate Private QBFT Node 4validators...\033[0m"
 mkdir -p node-0/data/keystore node-1/data/keystore node-2/data/keystore node-3/data/keystore
 
@@ -63,3 +46,4 @@ geth --datadir node-0/data init node-0/data/genesis.json
 geth --datadir node-1/data init node-1/data/genesis.json
 geth --datadir node-2/data init node-2/data/genesis.json
 geth --datadir node-3/data init node-3/data/genesis.json
+

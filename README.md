@@ -2,9 +2,12 @@
 
 This repository contains scripts for setting up and managing the Pentacle development network.
 
+## prepare.sh
+The `prepare.sh` script is used for downloading and installing go-quorum
+
 ## set_node.sh
 
-The `set_node.sh` script is used for downloading and installing go-quorum, as well as setting up a network with 4 validators.
+The `set_node.sh` setting up a network with 4 validators.
 
 ## start_node.sh
 
@@ -25,4 +28,3 @@ Please refer to the individual script files for more details on their usage.
 3. Run the `start_node.sh` script to start the 4 validators in the network.
 
 4. If you need to reset everything, you can run the `clear.sh` script to shut down the validators and delete all files.
-
